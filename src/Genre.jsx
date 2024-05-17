@@ -201,7 +201,7 @@ const areArraysEqual = (array1, array2) => {
           />
           <button
             disabled={randomSong ? false : true}
-            className="submit1"
+            className={props.trueFalse ? "submit1" : "submit1-dark"}
             type="button"
             onClick={() => handleSubmit1()}
           >
@@ -224,11 +224,11 @@ const areArraysEqual = (array1, array2) => {
             name="album"
             onChange={handleChange2}
             value={inputText2}
-            placeholder="Country,Dance,Alternative, Pop etc."
+            placeholder="Country,Soundtrack,Alternative,Dance,Pop,Classial etc."
           />
           <button
             disabled={randomSong ? false : true}
-            className="submit2"
+            className={props.trueFalse ? "submit2" : "submit2-dark"}
             type="button"
             onClick={() => handleSubmit2()}
           >
@@ -238,14 +238,22 @@ const areArraysEqual = (array1, array2) => {
       </div>
 
       <div className="btn">
-        <button onClick={randomUrl} type="button">
+        <button
+          className={props.trueFalse ? "btns" : "btns-dark"}
+          onClick={randomUrl}
+          type="button"
+        >
           New Song
         </button>
-        <button onClick={handleClear} type="button">
+        <button
+          className={props.trueFalse ? "btns" : "btns-dark"}
+          onClick={handleClear}
+          type="button"
+        >
           Clear
         </button>
         <audio
-          className="audio"
+          className={props.trueFalse ? "audio" : "audio-dark"}
           controls
           src={randomSong}
           type="audio/mp3"
